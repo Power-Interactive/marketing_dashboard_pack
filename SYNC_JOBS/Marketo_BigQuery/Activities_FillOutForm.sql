@@ -1,0 +1,1 @@
+CACHE [Activities_FillOutForm] SELECT [ActivityId],[LeadId],[ActivityDate],[CampaignId],[WebformID],[WebformIDValue],[WebpageID],[ListId] FROM [Activities_FillOutForm] WHERE [ActivityDate] >= CONCAT(SUBSTRING(DATEADD('d', -1, CURRENT_DATE()), 0, 10), ' 15:00:00') AND [ActivityDate] < CONCAT(SUBSTRING(CURRENT_DATE(), 0, 10), ' 15:00:00')
