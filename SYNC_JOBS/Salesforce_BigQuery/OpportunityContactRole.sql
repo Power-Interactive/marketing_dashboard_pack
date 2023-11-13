@@ -1,0 +1,1 @@
+CACHE [OpportunityContactRole] SELECT * FROM [OpportunityContactRole] WHERE [SystemModstamp] >= CONCAT(SUBSTRING(DATEADD('d', -1, CURRENT_DATE()), 0, 10), ' 15:00:00') AND [SystemModstamp] < CONCAT(SUBSTRING(CURRENT_DATE(), 0, 10), ' 15:00:00')
