@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION `pi-dashboard-398109.datamart.ForecastCategory`(ForecastCategory STRING) RETURNS STRING AS (
+CREATE OR REPLACE FUNCTION `pi-dashboard-398109.datamart.forecast_category`(ForecastCategory STRING) RETURNS STRING AS (
 (
     SELECT
       CASE
