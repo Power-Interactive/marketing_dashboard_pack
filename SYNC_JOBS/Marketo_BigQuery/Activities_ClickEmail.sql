@@ -1,0 +1,1 @@
+CACHE [Activities_ClickEmail] SELECT [ActivityId], [ActivityDate], [CampaignId], [LeadId], [Link], [MailingID], [MailingIDValue] FROM [Activities_ClickEmail] WHERE [ActivityDate] >= CONCAT(SUBSTRING(DATEADD('d', -1, CURRENT_DATE()), 0, 10), ' 15:00:00') AND [ActivityDate] < CONCAT(SUBSTRING(CURRENT_DATE(), 0, 10), ' 15:00:00')
