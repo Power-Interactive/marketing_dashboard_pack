@@ -1,0 +1,1 @@
+CACHE [Activities_ChangeDataValue] SELECT [ActivityId], [ActivityDate], [AttributeName], [AttributeNameValue], [CampaignId], [LeadId], [NewValue], [OldValue], [Reason] FROM [Activities_ChangeDataValue] WHERE [ActivityDate] >= CONCAT(SUBSTRING(DATEADD('d', -1, CURRENT_DATE()), 0, 10), ' 15:00:00') AND [ActivityDate] < CONCAT(SUBSTRING(CURRENT_DATE(), 0, 10), ' 15:00:00')
