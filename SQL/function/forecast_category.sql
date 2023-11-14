@@ -1,12 +1,12 @@
-CREATE OR REPLACE FUNCTION `pi-dashboard-398109.datamart.forecast_category`(ForecastCategory STRING) RETURNS STRING AS (
+CREATE OR REPLACE FUNCTION `pi-dev-dashboard.datamart.forecast_category`(ForecastCategory STRING) RETURNS STRING AS (
 (
     SELECT
       CASE
         WHEN ForecastCategory = "Lost" THEN '5.Closed Lost'
         WHEN ForecastCategory = "Omitted" THEN '5.Closed Lost'
-        WHEN ForecastCategory = "Closed" THEN '4.Closed'
-        WHEN ForecastCategory = "Won" THEN '4.Closed'
-        WHEN ForecastCategory = "Closed" THEN '4.Closed'
+        WHEN ForecastCategory = "Closed" THEN '4.Closed Won'
+        WHEN ForecastCategory = "Won" THEN '4.Closed Won'
+        WHEN ForecastCategory = "Closed" THEN '4.Closed Won'
         WHEN ForecastCategory = "Commit" THEN '3.Commit'
         WHEN ForecastCategory = "Forecast" THEN '3.Commit'
         WHEN ForecastCategory = "Best Case" THEN '2.BestCase'
