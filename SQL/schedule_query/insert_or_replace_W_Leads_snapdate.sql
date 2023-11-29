@@ -47,14 +47,3 @@ ON
   DR.id = L.id
 ORDER BY
   L.id, DR.snapshot_date;
-
-
---最終的な W_Leads_Snapdate の形式
-SELECT
-  snapshot_date
-  id,
-  created_datetime,
-  lead_source,
-  lifecycle_status
-FROM
-  `pi-dev-dashboard.sample_ma.Leads`
