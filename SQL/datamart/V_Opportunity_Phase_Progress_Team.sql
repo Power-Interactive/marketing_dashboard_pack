@@ -3,24 +3,18 @@ T1
 AS
 (
 SELECT
-  DATE_TRUNC(t1. close_date , MONTH) Month
- ,t1.contact_status
- ,datamart.ForecastCategory(t1.forecast_phase) AS forecast_phase --永続関数を参照
+  DATE_TRUNC(t1.close_date, MONTH) Month
+ ,datamart.forecast_category(t1.forecast_phase) AS forecast_category --永続関数を参照
  ,datamart.stage_label(t1.forecast_phase) AS stage_label --永続関数を参照
  ,t1.type
  ,t2.department
  ,t2.office
  ,SUM(t1.amount) amount
-FROM `pi-dashboard-398109.datawarehouse.Opportunity`  t1
-LEFT JOIN `pi-dashboard-398109.datawarehouse.User` t2
- ON t1.owner_id = t2.id
+FROM `pi-dev-dashboard.datawarehouse.Opportunity`  t1
+LEFT JOIN `pi-dev-dashboard.datawarehouse.User` t2
+ ON t1.owner_id = t2.Id
 GROUP BY 
-  DATE_TRUNC(t1.close_date, MONTH)
- ,t1.contact_status
- ,t1.forecast_phase
- ,t1.type
- ,t2.department
- ,t2.office
+  1,2,3,4,5,6
 ),
 
 T1_tmp
@@ -35,45 +29,37 @@ SELECT
 FROM
   T1
 GROUP BY
-  month,
-  type,
-  department,
-  office
+  1,2,3,4
 ),
 
 T2
 AS
 (
 SELECT
-  S1.month,
-  '4.過不足' stage_name,
+  S1.Month AS month,
   '4.過不足' stage_label,
-  S1.type,
-  S1.office,
-  S1.department,
-  ifnull(sum(S1.sales_target),0)-ifnull(sum(T1.amount),0) AS amount,
+  S1.Type AS type,
+  S1.Office AS office,
+  S1.Department AS department,
+  ifnull(sum(S1.SalesTarget),0)-ifnull(sum(T1_tmp.Amount),0) AS amount,
 FROM
- `pi-dashboard-398109.datawarehouse.Sales_Target_Team_Master` AS S1
+ `pi-dev-dashboard.master.SalesTarget_Team_Type` AS S1
 LEFT JOIN
-  T1_tmp AS T1
+  T1_tmp AS T1_tmp
 ON
-  S1.month = T1.month
-  AND S1.type = T1.type
-  AND S1.office = T1.office
-  AND S1.department = T1.department
+  S1.Month = T1_tmp.Month
+  AND S1.Type = T1_tmp.Type
+  AND S1.Office = T1_tmp.Office
+  AND S1.Department = T1_tmp.Department
 GROUP BY
-  S1.month,
-  S1.type,
-  S1.office,
-  S1.department
+  1,2,3,4,5
 )
 
 SELECT
-  month,
-  datamart.fiscal_year(Month) AS fiscal_year, --永続関数を参照
-  CONCAT(EXTRACT(YEAR FROM  DATE (Month)),"年",EXTRACT(month FROM  DATE (Month)),"月") year_month,
-  contact_status,
-  forecast_phase,
+  Month,
+  datamart.fiscal_year(month) AS fiscal_year, --永続関数を参照
+  CONCAT(EXTRACT(YEAR FROM  DATE (month)),"年",EXTRACT(month FROM  DATE (month)),"月") year_month,
+  forecast_category,
   stage_label,
   type,
   office,
@@ -88,8 +74,7 @@ SELECT
   month,
   datamart.fiscal_year(Month) AS fiscal_year, --永続関数を参照
   CONCAT(EXTRACT(YEAR FROM  DATE (Month)),"年",EXTRACT(month FROM  DATE (Month)),"月") year_month,
-  stage_name,
-  null forecast_phase,
+  null forecast_category,
   stage_label,
   type,
   office,
