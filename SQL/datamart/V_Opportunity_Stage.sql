@@ -1,3 +1,4 @@
+--TeamとUserを本クエリに統合
 WITH
 T1
 AS
