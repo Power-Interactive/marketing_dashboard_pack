@@ -3,16 +3,16 @@ T1
 AS
 (
 SELECT
-  Master.month,
-  SFA.id,
-  SFA.department ,
-  SFA.office ,
-  Master.user,
-  Master.sales_target 
+  Master.Month AS month,
+  SFA.id AS id,
+  SFA.department AS department,
+  SFA.office AS office,
+  Master.User AS user,
+  Master.SalesTarget AS sales_target
 FROM
-  `pi-dashboard-398109.datawarehouse.Sales_Target_User_Master` AS Master
+  `pi-dev-dashboard.master.SalesTarget_User` AS Master
 LEFT JOIN
-  `pi-dashboard-398109.datawarehouse.User` AS SFA
+  `pi-dev-dashboard.datawarehouse.User` AS SFA
 ON
   CONCAT(SFA.last_name,SFA.first_name) = Master.User
   AND
@@ -28,28 +28,23 @@ T2
 AS
 (
 SELECT
-  DATE_TRUNC(close_date, MONTH) month,
-  SFA.id,
-  SFA.department,
-  SFA.office ,
-  CONCAT(SFA.last_name,SFA.first_name) user,
+  DATE_TRUNC(OP.close_date, MONTH) month,
+  SFA.id AS id,
+  SFA.department AS department,
+  SFA.office AS office,
+  CONCAT(SFA.last_name,SFA.first_name) AS user,
   OP.name AS new_opportunity, 
-  CAST(SUM(OP.Amount) AS NUMERIC) as new_amount,
+  CAST(SUM(OP.amount) AS NUMERIC) as new_amount,
 FROM
-  `pi-dashboard-398109.datawarehouse.Opportunity` AS OP  --SFA.OppotunitySnapshot_*から変更
+  `pi-dev-dashboard.datawarehouse.Opportunity` AS OP  --SFA.OppotunitySnapshot_*から変更
 LEFT JOIN
-  `pi-dashboard-398109.datawarehouse.User` AS SFA
+  `pi-dev-dashboard.datawarehouse.User` AS SFA
 ON
-  OP.id = SFA.id
+  OP.owner_id = SFA.id
 WHERE
-  Type IN ('新規','新規商談')
+  type IN ('新規','新規商談')
 GROUP BY
-  DATE_TRUNC(OP.close_date, MONTH),
-  SFA.id,
-  SFA.department,
-  SFA.office,
-  user,
-  OP.name
+  1,2,3,4,5,6
 ),
 
 --既存
@@ -57,56 +52,43 @@ T3
 AS
 (
 SELECT
-  DATE_TRUNC(OP.close_date, MONTH) month,
-  SFA.id,
-  SFA.department,
-  SFA.office ,
-  CONCAT(SFA.last_name,SFA.first_name) user,
+  DATE_TRUNC(OP.close_date, MONTH) AS month,
+  SFA.id AS id,
+  SFA.department AS department,
+  SFA.office AS office,
+  CONCAT(SFA.last_name,SFA.first_name) AS user,
   OP.name AS keep_opportunity,
   CAST(SUM(OP.Amount) AS NUMERIC) as keep_amount
 FROM
-  `pi-dashboard-398109.datawarehouse.Opportunity` AS OP  --SFA.OppotunitySnapshot_*から変更
+  `pi-dev-dashboard.datawarehouse.Opportunity` AS OP
 LEFT JOIN
-  `pi-dashboard-398109.datawarehouse.User` AS SFA
+  `pi-dev-dashboard.datawarehouse.User` AS SFA
 ON
-  OP.id = SFA.id
+  OP.owner_id = SFA.id
 WHERE
-  Type IN ('既存','既存商談','')
+  Type LIKE '%既存%' OR Type IS NULL --('既存','既存商談','')
 GROUP BY
-  DATE_TRUNC(OP.close_date, MONTH),
-  SFA.id,
-  SFA.department,
-  SFA.office,
-  user,
-  OP.name
+  1,2,3,4,5,6
 ),
 
 T4
 AS
 (
 SELECT
-  DATE_TRUNC(OP.close_date, MONTH) Month,
-  SFA.id,
-  SFA.department,
-  SFA.office ,
-  CONCAT(SFA.last_name,SFA.first_name) User,
-  CASE WHEN OP.forecast_phase IN ('Forecast') THEN OP.name END stage_commit, --完了予定
-  CASE WHEN OP.forecast_phase IN ('Closed') THEN OP.name END stage_closedwon, --受注
-  CASE WHEN forecast_phase IN ('Omitted') THEN OP.name END stage_closedlost --失注
+  DATE_TRUNC(OP.close_date, MONTH) AS month,
+  SFA.id AS id,
+  SFA.department AS department,
+  SFA.office AS office,
+  CONCAT(SFA.last_name,SFA.first_name) AS user,
+  CASE WHEN OP.forecast_phase IN ('Commit') THEN OP.name END stage_commit, --完了予定
+  CASE WHEN OP.forecast_phase IN ('Won','Closed Won','4.Closed Won') THEN OP.name END stage_closedwon, --受注
+  CASE WHEN OP.forecast_phase IN ('Lost','Closed Lost','5.Closed Lost') THEN OP.name END stage_closedlost --失注
 FROM
-  `pi-dashboard-398109.datawarehouse.Opportunity` AS OP  --SFA.OppotunitySnapshot_*から変更
+  `pi-dev-dashboard.datawarehouse.Opportunity` AS OP  --SFA.OppotunitySnapshot_*から変更
 LEFT JOIN
-  `pi-dashboard-398109.datawarehouse.User` AS SFA
+  `pi-dev-dashboard.datawarehouse.User` AS SFA
 ON
-  OP.id = SFA.id
-GROUP BY
-  DATE_TRUNC(OP.close_date, MONTH),
-  SFA.id,
-  SFA.department,
-  SFA.office,
-  user,
-  OP.name,
-  OP.forecast_phase
+  OP.owner_id = SFA.id
 )
 
 
