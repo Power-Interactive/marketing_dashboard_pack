@@ -3,24 +3,24 @@ Lead
 AS
 (
 SELECT
-  id,--リードID
-  created_datetime,--リード作成日
+  id, --リードID
+  created_datetime, --リード作成日
   updated_datetime, --リード更新日
-  lifecycle_status,--ステージ
-  company,--企業名
-  concat(last_name , first_name) AS name,--氏名
-  lead_source,--リードソース
-  detailded_lead_source, --リードソース詳細
-  concat("https://powerweb.lightning.force.com/lightning/r/Contact/",sfa_contactid,"/view") AS url --SFDCのURL。クライアントに合わせて修正が必要。
+  lifecycle_status, --ステージ
+  company AS company,  --企業名
+  concat(last_name , first_name) AS name, --氏名
+  lead_source AS lead_source, --リードソース
+  detailded_lead_source AS detailded_lead_source, --リードソース詳細
+  concat("https://powerweb.lightning.force.com/lightning/r/Contact/",sfa_accountid,"/view") AS URL --SFDCのURL。クライアントに合わせて修正が必要。
 FROM
-  `pi-dashboard-398109.datawarehouse.Leads`
+  `pi-dev-dashboard.datawarehouse.Leads`
 ),
 
 tmp
 AS
 (
 SELECT
-  t1.activity_datetime
+  t1.activity_datetime AS activity_datetime
   ,t1.lead_id
   ,t2.created_datetime
   ,t2.updated_datetime
@@ -28,14 +28,14 @@ SELECT
   ,t2.name
   ,t2.lead_source
   ,t2.detailded_lead_source
-  ,url
+  ,URL AS url
 
   ,datamart.lifecycle_status(t1.new_value) AS new_value
   ,datamart.lifecycle_status(t1.old_value) AS old_value
 
   ,LEAD(activity_datetime) OVER (PARTITION BY lead_id ORDER BY activity_datetime desc) as prev_activity_date
 FROM
-  `pi-dashboard-398109.datawarehouse.Activities_ChangeDataValue` AS t1
+  `pi-dev-dashboard.datawarehouse.Activities_ChangeDataValue` AS t1
 LEFT JOIN
   Lead AS t2
 ON
@@ -45,7 +45,7 @@ WHERE
 )
 
 SELECT
-  FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', activity_datetime, 'Asia/Tokyo') AS activity_date
+  FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', activity_datetime, 'Asia/Tokyo') AS activity_datetime
   ,lead_id
   ,FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', created_datetime, 'Asia/Tokyo') AS created_datetime
   ,FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', updated_datetime, 'Asia/Tokyo') AS updated_datetime
