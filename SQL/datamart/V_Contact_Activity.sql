@@ -1,74 +1,74 @@
 WITH ACT AS (
     SELECT 
         FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', activity_datetime, 'Asia/Tokyo') AS activity_datetime
-        ,lead_id
+        ,lead_id AS lead_id
         ,'Visit Webpage' category 
-        ,webpage_id_value activity_name
-    FROM `pi-dashboard-398109.datawarehouse.Activities_VisitWebpage`
+        ,webpage_id_value AS activity_name
+    FROM `pi-dev-dashboard.datawarehouse.Activities_VisitWebpage`
     UNION ALL 
     SELECT
         FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', activity_datetime, 'Asia/Tokyo') AS activity_datetime
-        ,lead_id
+        ,lead_id AS lead_id
         ,'Open Email' category 
-        ,mailing_id_value activity_name
-    FROM `pi-dashboard-398109.datawarehouse.Activities_OpenEmail` 
+        ,mailing_id_value AS activity_name
+    FROM `pi-dev-dashboard.datawarehouse.Activities_OpenEmail` 
     UNION ALL 
     SELECT 
         FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', activity_datetime, 'Asia/Tokyo') AS activity_datetime
-        ,lead_id
+        ,lead_id AS lead_id
         ,'Click Email' category 
-        ,link activity_name
-    FROM `pi-dashboard-398109.datawarehouse.Activities_ClickEmail` 
+        ,link AS activity_name
+    FROM `pi-dev-dashboard.datawarehouse.Activities_ClickEmail` 
     UNION ALL 
     SELECT 
         FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', activity_datetime, 'Asia/Tokyo') AS activity_datetime
-        ,lead_id
+        ,lead_id AS lead_id
         ,'Click Link' category 
-        ,link_id_value activity_name
-    FROM `pi-dashboard-398109.datawarehouse.Activities_ClickLink` 
+        ,link_id_value AS activity_name
+    FROM `pi-dev-dashboard.datawarehouse.Activities_ClickLink` 
     UNION ALL 
     SELECT 
         FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', activity_datetime, 'Asia/Tokyo') AS activity_datetime
-        ,lead_id
+        ,lead_id AS lead_id
         ,'Fill Out Form' category 
-        ,webform_id_value activity_name
-    FROM `pi-dashboard-398109.datawarehouse.Activities_FillOutForm` 
+        ,webform_id_value AS activity_name
+    FROM `pi-dev-dashboard.datawarehouse.Activities_FillOutForm` 
 
 ),
 LC AS (
     SELECT
-    L.sfa_contactid
-    ,L.id
-    ,C.last_name
-    ,C.first_name
-    ,C.department
-    ,C.title
-    ,C.account
-    ,C.industry
-    ,C.state
-    ,C.amount
+    L.sfa_contact_id
+    ,L.customer_id AS id
+    ,C.lastname AS last_name
+    ,C.firstname AS first_name
+    ,C.department AS department
+    ,C.title AS title
+    ,C.account AS account
+    ,C.industry AS industry
+    ,C.State AS state
+    ,C.Amount AS amount
     ,L.number_of_employee
-    ,C.rank
-    FROM `pi-dashboard-398109.datawarehouse.Leads` L 
+    ,C.Rank AS rank
+    FROM `pi-dev-dashboard.dl_ma.Leads` L 
     LEFT JOIN (
         SELECT
             T1.id,
-            T1.last_name,
-            T1.first_name,
+            T1.lastname,
+            T1.firstname,
             T1.department,
             T1.title,
             T2.name AS account,
             T2.industry,
-            T2.state,
-            T2.amount,
-            T2.rank
-        FROM `pi-dashboard-398109.datawarehouse.Contact`  AS T1
+            T2.State,
+            T2.Amount,
+            T2.Rank
+        FROM `pi-dev-dashboard.dl_sfa.Contact`  AS T1
         LEFT JOIN
-            `pi-dashboard-398109.datawarehouse.Account` AS T2
+            `pi-dev-dashboard.dl_sfa.Account` AS T2
         ON
-            T1.id = T2.id
+            T1.accountid = T2.ID
     ) C
-    ON L.sfa_contactid = C.id
+    ON L.sfa_contact_id = C.id
 )
 SELECT
  *
@@ -77,4 +77,3 @@ LEFT JOIN LC lc
     ON ACT.lead_id = LC.id
 WHERE
     Concat(lc.last_name,lc.first_name) IS NOT NULL
-
