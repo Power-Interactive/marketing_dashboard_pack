@@ -7,7 +7,7 @@ SELECT
     forecast_phase,
     min(system_modified_datetime) AS system_modified_datetime --ForcastCategory以外の更新を考慮
 FROM
-    `pi-dashboard-398109.datawarehouse.OpportunityHistory`
+    `pi-dev-dashboard.datawarehouse.OpportunityHistory`
 WHERE
     forecast_phase IS NOT NULL
 GROUP BY
@@ -36,4 +36,4 @@ SELECT
     TIMESTAMP_DIFF(system_modified_datetime,old_value_date,DAY) AS diff_days
 FROM OrderedHistory
 WHERE forecast_phase <> old_value OR old_value IS NULL
-ORDER BY opportunity_id, system_modified_datetime;
+ORDER BY opportunity_id, system_modified_datetime
