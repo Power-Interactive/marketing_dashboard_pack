@@ -9,7 +9,7 @@ SELECT
   datamart.lifecycle_status(lifecycle_status) AS phase,
   COUNT(Distinct id) result
 FROM
-  `pi-dashboard-398109.datawarehouse.Leads`
+  `pi-dev-dashboard.datawarehouse.Leads`
 GROUP BY
   1,2,3
 ),
@@ -21,17 +21,17 @@ AS
 (
 SELECT 
   DATE(created_datetime, "Asia/Tokyo") AS create_date,
-  datamart.lead_source(opportunity_source) AS lead_source,
+  datamart.lead_source(detailded_opportunity_source) AS lead_source,
   CASE
-    WHEN forecast_phase IN ("Closed","Won") THEN '受注件数' --他社への実装時に修正が必要（ForecastCategoryの値に合わせて変更）
+    WHEN forecast_phase IN ("Closed","Won") THEN '受注件数' --他社への実装時に修正が必要（forecast_phaseの値に合わせて変更）
   END phase,
   COUNT(DISTINCT id) result,
 FROM
-  `pi-dashboard-398109.datawarehouse.Opportunity`
+  `pi-dev-dashboard.datawarehouse.Opportunity`
 WHERE
   forecast_phase IN ("Closed","Won")
   AND
-  datamart.lead_source(opportunity_source) is not null
+  datamart.lead_source(detailded_opportunity_source) is not null
 GROUP BY
   1,2,3
 ),
@@ -42,17 +42,17 @@ AS
 (
 SELECT 
   DATE(created_datetime, "Asia/Tokyo") AS create_date,
-  datamart.lead_source(opportunity_source) AS lead_source,
+  datamart.lead_source(detailded_opportunity_source) AS lead_source,
   CASE
-    WHEN forecast_phase IN ("Closed","Won") THEN '受注金額' --他社への実装時に修正が必要（ForecastCategoryの値に合わせて変更）
+    WHEN forecast_phase IN ("Closed","Won") THEN '受注金額' --他社への実装時に修正が必要（forecast_phaseの値に合わせて変更）
   END phase,
   sum(amount) result,
 FROM
-  `pi-dashboard-398109.datawarehouse.Opportunity`
+  `pi-dev-dashboard.datawarehouse.Opportunity`
 WHERE
   forecast_phase IN ("Closed","Won")
   AND
-  datamart.lead_source(opportunity_source) is not null
+  datamart.lead_source(detailded_opportunity_source) is not null
 GROUP BY
   1,2,3
 )
