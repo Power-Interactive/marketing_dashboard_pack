@@ -9,7 +9,7 @@ SELECT
   datamart.lifecycle_status(new_value) AS phase,
   COUNT(Distinct lead_id) result
 FROM
-  `pi-dashboard-398109.datamart.V_Lead_ChangeDataValue`
+  `pi-dev-dashboard.re_datamart.V_Lead_ChangeDataValue` --開発時に参照先を変更する必要がある(re_datamart→datamart)
 GROUP BY
   1,2,3
 ),
@@ -25,11 +25,12 @@ SELECT
   CASE
     WHEN S2.forecast_phase IN ("Closed","Won") THEN '受注件数' --他社への実装時に修正が必要（ForecastCategoryの値に合わせて変更）
   END phase,
-  COUNT(DISTINCT id) result,
+  COUNT(DISTINCT S2.id) result,
 FROM
-  `pi-dashboard-398109.datamart.V_Opportunity_History` AS S1 --他社への実装時に修正が必要（ForecastCategoryの値に合わせて変更）
+  `pi-dev-dashboard.re_datamart.V_Opportunity_History` AS S1 --他社への実装時に修正が必要（ForecastCategoryの値に合わせて変更）
+  --開発時に参照先を変更する必要がある(re_datamart→datamart)
 LEFT JOIN
-  `pi-dashboard-398109.datawarehouse.Opportunity` AS S2
+  `pi-dev-dashboard.datawarehouse.Opportunity` AS S2
 ON
   S1.opportunity_id = S2.id
 WHERE
@@ -50,11 +51,12 @@ SELECT
   CASE
     WHEN S2.forecast_phase IN ("Closed","Won") THEN '受注金額' --他社への実装時に修正が必要（ForecastCategoryの値に合わせて変更）
   END phase,
-  sum(amount) result
+  sum(S2.amount) result
 FROM
-  `pi-dashboard-398109.datamart.V_Opportunity_History` AS S1 --他社への実装時に修正が必要（ForecastCategoryの値に合わせて変更）
+  `pi-dev-dashboard.re_datamart.V_Opportunity_History` AS S1 --他社への実装時に修正が必要（ForecastCategoryの値に合わせて変更）
+  --開発時に参照先を変更する必要がある(re_datamart→datamart)
 LEFT JOIN
-  `pi-dashboard-398109.datawarehouse.Opportunity` AS S2
+  `pi-dev-dashboard.datawarehouse.Opportunity` AS S2
 ON
   S1.opportunity_id = S2.id
 WHERE
