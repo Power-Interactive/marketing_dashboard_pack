@@ -26,7 +26,7 @@ AS (
     SELECT month,closedwon,closedlost
     FROM (
         SELECT 
-        FORMAT_DATE("%F", date_trunc(close_date,Month) ) month
+        FORMAT_DATE("%F", date_trunc(last_modified_datetime,Month) ) month
         ,CASE forecast_phase
                 WHEN 'Closed' THEN 'ClosedWon'
                 WHEN 'Won' THEN 'ClosedWon' --サンプルデータ修正用
@@ -38,7 +38,7 @@ AS (
         FROM  `pi-dev-dashboard.datawarehouse.Opportunity`  t2   --SFA.OppotunitySnapshot_*から変更
         WHERE
             forecast_phase in ('Closed','Omitted','Won','Lost') --Closed:受注, Omitted:ロスト
-        GROUP BY FORMAT_DATE("%F", date_trunc(close_date,Month) ),stage_name
+        GROUP BY FORMAT_DATE("%F", date_trunc(last_modified_datetime,Month) ),stage_name
     )
     PIVOT(
         SUM(Cnt_Order)
