@@ -9,9 +9,9 @@ WITH LatestActivity AS (
         AC.new_value,
         ROW_NUMBER() OVER(PARTITION BY L.id, L.snapshot_date ORDER BY AC.activity_datetime DESC) AS row_num
     FROM
-        `pi-dev-dashboard.re_datamart.W_Leads_Snapdate` AS L
+        `pi-dev-dashboard.datamart.W_Leads_Snapdate` AS L
     LEFT JOIN
-        `pi-dev-dashboard.re_datamart.V_Lead_ChangeDataValue` AS AC
+        `pi-dev-dashboard.datamart.V_Lead_ChangeDataValue` AS AC
     ON
         L.id = AC.lead_id
         AND
