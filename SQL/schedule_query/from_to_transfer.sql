@@ -1,6 +1,6 @@
 --Activities_ChangeDataValue
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_ChangeDataValue`
+  `pi-porting-dashboard.dl_ma.Activities_ChangeDataValue`
 SELECT
   ActivityId,
   ActivityDate,
@@ -19,7 +19,7 @@ WHERE
 
 --Activities_ChangeProgramMemberData
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_ChangeProgramMemberData`
+  `pi-porting-dashboard.dl_ma.Activities_ChangeProgramMemberData`
 SELECT
   ActivityId,
   ActivityDate,
@@ -38,7 +38,7 @@ WHERE
 
 --Activities_ChangeScore
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_ChangeScore`
+  `pi-porting-dashboard.dl_ma.Activities_ChangeScore`
 SELECT
   ActivityId,
   ActivityDate,
@@ -59,7 +59,7 @@ WHERE
 
 --Activities_ChangeSegment
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_ChangeSegment`
+  `pi-porting-dashboard.dl_ma.Activities_ChangeSegment`
 SELECT
   ActivityId,
   ActivityDate,
@@ -77,7 +77,7 @@ WHERE
 
 --Activities_ChangeStatusinProgression
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_ChangeStatusinProgression`
+  `pi-porting-dashboard.dl_ma.Activities_ChangeStatusinProgression`
 SELECT
   ActivityId,
   ActivityDate,
@@ -98,7 +98,7 @@ WHERE
 
 --Activities_ClickEmail
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_ClickEmail`
+  `pi-porting-dashboard.dl_ma.Activities_ClickEmail`
 SELECT
   ActivityId,
   ActivityDate,
@@ -116,7 +116,7 @@ WHERE
 
 --Activities_ClickLink
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_ClickLink`
+  `pi-porting-dashboard.dl_ma.Activities_ClickLink`
 SELECT
   ActivityId,
   ActivityDate,
@@ -136,7 +136,7 @@ WHERE
 
 --Activities_EmailDelivered
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_EmailDelivered`
+  `pi-porting-dashboard.dl_ma.Activities_EmailDelivered`
 SELECT
   ActivityId,
   ActivityDate,
@@ -154,7 +154,7 @@ WHERE
 
 --Activities_FillOutForm
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_FillOutForm`
+  `pi-porting-dashboard.dl_ma.Activities_FillOutForm`
 SELECT
   ActivityId,
   LeadId,
@@ -174,7 +174,7 @@ WHERE
 
 --Activities_NewLead
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_NewLead`
+  `pi-porting-dashboard.dl_ma.Activities_NewLead`
 SELECT
   ActivityId,
   LeadId,
@@ -199,7 +199,7 @@ WHERE
 
 --Activities_OpenEmail
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_OpenEmail`
+  `pi-porting-dashboard.dl_ma.Activities_OpenEmail`
 SELECT
   ActivityId,
   ActivityDate,
@@ -216,7 +216,7 @@ WHERE
 
 --Activities_SendEmail
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_SendEmail`
+  `pi-porting-dashboard.dl_ma.Activities_SendEmail`
 SELECT
   ActivityId,
   ActivityDate,
@@ -233,7 +233,7 @@ WHERE
 
 --Activities_VisitWebpage
 INSERT INTO
-  `pi-dashboard-398109.dl_ma.Activities_VisitWebpage`
+  `pi-porting-dashboard.dl_ma.Activities_VisitWebpage`
 SELECT
   ActivityId,
   ActivityDate,
@@ -251,7 +251,7 @@ WHERE
 --Leads
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_ma.Leads`
+  `pi-porting-dashboard.dl_ma.Leads`
 AS
 SELECT
   *
@@ -263,7 +263,7 @@ FROM
 --Programs
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_ma.Programs`
+  `pi-porting-dashboard.dl_ma.Programs`
 AS
 SELECT
   *
@@ -274,7 +274,7 @@ FROM
 --Segmentations
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_ma.Segmentations`
+  `pi-porting-dashboard.dl_ma.Segmentations`
 AS
 SELECT
   *
@@ -285,7 +285,7 @@ FROM
 --SmartCampaigns
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_ma.SmartCampaigns`
+  `pi-porting-dashboard.dl_ma.SmartCampaigns`
 AS
 SELECT
   *
@@ -299,7 +299,7 @@ FROM
 --Account
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_sfa.Account`
+  `pi-porting-dashboard.dl_sfa.Account`
 AS
 SELECT
   *
@@ -310,7 +310,7 @@ FROM
 --Campaign
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_sfa.Campaign`
+  `pi-porting-dashboard.dl_sfa.Campaign`
 AS
 SELECT
   *
@@ -322,7 +322,7 @@ FROM
 --CampaignMember
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_sfa.CampaignMember`
+  `pi-porting-dashboard.dl_sfa.CampaignMember`
 AS
 SELECT
   *
@@ -333,7 +333,7 @@ FROM
 --CampaignMemberStatus
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_sfa.CampaignMemberStatus`
+  `pi-porting-dashboard.dl_sfa.CampaignMemberStatus`
 AS
 SELECT
   *
@@ -345,7 +345,7 @@ FROM
 --Contact
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_sfa.Contact`
+  `pi-porting-dashboard.dl_sfa.Contact`
 AS
 SELECT
   *
@@ -356,7 +356,7 @@ FROM
 --Lead
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_sfa.Lead`
+  `pi-porting-dashboard.dl_sfa.Lead`
 AS
 SELECT
   *
@@ -367,7 +367,7 @@ FROM
 --Opportunity
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_sfa.Opportunity`
+  `pi-porting-dashboard.dl_sfa.Opportunity`
 AS
 SELECT
   *
@@ -377,7 +377,7 @@ FROM
 
 --OpportunityContactRole
 INSERT INTO
-  `pi-dashboard-398109.dl_sfa.OpportunityContactRole`
+  `pi-porting-dashboard.dl_sfa.OpportunityContactRole`
 SELECT
   *
 FROM
@@ -389,7 +389,7 @@ WHERE
 
 --OpportunityHistory
 INSERT INTO
-  `pi-dashboard-398109.dl_sfa.OpportunityHistory`
+  `pi-porting-dashboard.dl_sfa.OpportunityHistory`
 SELECT
   *
 FROM
@@ -400,7 +400,7 @@ WHERE
 
 --Task
 INSERT INTO
-  `pi-dashboard-398109.dl_sfa.Task`
+  `pi-porting-dashboard.dl_sfa.Task`
 SELECT
   *
 FROM
@@ -412,7 +412,7 @@ WHERE
 --User
 /* 全件洗い替えで対応 */
 CREATE OR REPLACE TABLE
-  `pi-dashboard-398109.dl_sfa.User`
+  `pi-porting-dashboard.dl_sfa.User`
 AS
 SELECT
   *
