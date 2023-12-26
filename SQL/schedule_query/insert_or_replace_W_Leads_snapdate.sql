@@ -10,7 +10,7 @@ DECLARE END_DATE DATE DEFAULT "2023-10-05";    -- Change to your desired end dat
 
 --格納先のテーブルを指定
 --既にある場合はINSERTで対応
---INSERT INTO `pi-dev-dashboard.re_datamart.W_Leads_Snapdate`
+--INSERT INTO `pi-dev-dashboard.datamart.W_Leads_Snapdate`
 
 CREATE OR REPLACE TABLE
   `pi-dev-dashboard.re_datamart.W_Leads_Snapdate`
