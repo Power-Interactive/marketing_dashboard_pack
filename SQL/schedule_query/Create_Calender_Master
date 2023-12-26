@@ -1,0 +1,31 @@
+declare start_date DATE;
+declare end_date DATE;
+set start_date = '2022-01-01';
+set end_date = '2035-12-31';
+
+
+CREATE OR REPLACE TABLE
+  `pi-porting-dashboard.dl_master.Calender_Master`
+AS
+
+WITH
+T1
+AS
+(
+SELECT
+    *
+FROM
+    UNNEST(
+        GENERATE_DATE_ARRAY(
+            start_date,
+            end_date,
+            INTERVAL 1 Month)
+    ) AS month
+)
+
+SELECT
+  *
+  ,DATE_SUB(month, INTERVAL 1 YEAR) AS month_1y		
+FROM
+  T1
+  
