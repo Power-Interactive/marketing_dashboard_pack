@@ -35,7 +35,7 @@ AS
 --生成した範囲の日付をLeadsに付与
 SELECT
     DR.snapshot_date,
-    L.id,
+    L.id AS customer_id,
     L.created_datetime AS created_datetime,
     L.lead_source AS lead_source,
     L.lifecycle_status AS lifecycle_status
