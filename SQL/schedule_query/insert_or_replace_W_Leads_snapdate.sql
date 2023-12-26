@@ -13,7 +13,7 @@ DECLARE END_DATE DATE DEFAULT "2023-10-05";    -- Change to your desired end dat
 --INSERT INTO `pi-dev-dashboard.datamart.W_Leads_Snapdate`
 
 CREATE OR REPLACE TABLE
-  `pi-dev-dashboard.re_datamart.W_Leads_Snapdate`
+  `pi-dev-dashboard.datamart.W_Leads_Snapdate`
 AS
 
 -- 指定された範囲の一連の日付を生成(Generate a series of dates for the specified range)
@@ -35,7 +35,7 @@ AS
 --生成した範囲の日付をLeadsに付与
 SELECT
     DR.snapshot_date,
-    L.id AS customer_id,
+    L.id,
     L.created_datetime AS created_datetime,
     L.lead_source AS lead_source,
     L.lifecycle_status AS lifecycle_status
