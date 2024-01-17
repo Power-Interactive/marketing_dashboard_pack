@@ -1,0 +1,154 @@
+[
+    {
+        "name": "id",
+        "type": "STRING"
+    },
+    {
+        "name": "created_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "lead_source",
+        "type": "STRING"
+    },
+    {
+        "name": "detailded_lead_source",
+        "type": "STRING"
+    },
+    {
+        "name": "lifecycle_status",
+        "type": "STRING"
+    },
+    {
+        "name": "company",
+        "type": "STRING"
+    },
+    {
+        "name": "office",
+        "type": "STRING"
+    },
+    {
+        "name": "department",
+        "type": "STRING"
+    },
+    {
+        "name": "title",
+        "type": "STRING"
+    },
+    {
+        "name": "title_class",
+        "type": "STRING"
+    },
+    {
+        "name": "name",
+        "type": "STRING"
+    },
+    {
+        "name": "first_name",
+        "type": "STRING"
+    },
+    {
+        "name": "last_name",
+        "type": "STRING"
+    },
+    {
+        "name": "sfa_accountid",
+        "type": "STRING"
+    },
+    {
+        "name": "sfa_contactid",
+        "type": "STRING"
+    },
+    {
+        "name": "sfa_leadid",
+        "type": "STRING"
+    },
+    {
+        "name": "sfa_type",
+        "type": "STRING"
+    },
+    {
+        "name": "rank",
+        "type": "STRING"
+    },
+    {
+        "name": "mail_address",
+        "type": "STRING"
+    },
+    {
+        "name": "score",
+        "type": "INTEGER"
+    },
+    {
+        "name": "behavior_score",
+        "type": "INTEGER"
+    },
+    {
+        "name": "demographic_score",
+        "type": "INTEGER"
+    },
+    {
+        "name": "amount",
+        "type": "INTEGER"
+    },
+    {
+        "name": "company_code",
+        "type": "STRING"
+    },
+    {
+        "name": "corporate_number",
+        "type": "INTEGER"
+    },
+    {
+        "name": "company_score",
+        "type": "STRING"
+    },
+    {
+        "name": "company_description",
+        "type": "STRING"
+    },
+    {
+        "name": "listed_status",
+        "type": "STRING"
+    },
+    {
+        "name": "established_date",
+        "type": "DATE"
+    },
+    {
+        "name": "number_of_employee",
+        "type": "STRING"
+    },
+    {
+        "name": "end_of_period",
+        "type": "INTEGER"
+    },
+    {
+        "name": "sectors",
+        "type": "STRING"
+    },
+    {
+        "name": "subsectors",
+        "type": "STRING"
+    },
+    {
+        "name": "industries",
+        "type": "STRING"
+    },
+    {
+        "name": "scenarios",
+        "type": "STRING"
+    },
+    {
+        "name": "similar_companies",
+        "type": "STRING"
+    },
+    {
+        "name": "customer_status",
+        "type": "STRING"
+    },
+    {
+        "name": "updated_datetime",
+        "type": "TIMESTAMP"
+    }
+]

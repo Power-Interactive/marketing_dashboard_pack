@@ -1,0 +1,38 @@
+[
+    {
+        "name": "activity_id",
+        "type": "STRING"
+    },
+    {
+        "name": "activity_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "attribute_name",
+        "type": "INTEGER"
+    },
+    {
+        "name": "attribute_name_value",
+        "type": "STRING"
+    },
+    {
+        "name": "campaign_id",
+        "type": "STRING"
+    },
+    {
+        "name": "lead_id",
+        "type": "STRING"
+    },
+    {
+        "name": "new_value",
+        "type": "STRING"
+    },
+    {
+        "name": "old_value",
+        "type": "STRING"
+    },
+    {
+        "name": "reason",
+        "type": "STRING"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "name": "lead_source",
+        "type": "STRING"
+    },
+    {
+        "name": "detailed_read_source",
+        "type": "STRING"
+    }
+]

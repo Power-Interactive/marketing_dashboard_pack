@@ -1,0 +1,22 @@
+[
+    {
+        "name": "ActivityId",
+        "type": "STRING"
+    },
+    {
+        "name": "ActivityDate",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "LeadId",
+        "type": "STRING"
+    },
+    {
+        "name": "MailingID",
+        "type": "INTEGER"
+    },
+    {
+        "name": "MailingIDValue",
+        "type": "STRING"
+    }
+]

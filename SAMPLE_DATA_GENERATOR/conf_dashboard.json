@@ -1,0 +1,177 @@
+{
+    "Leads_New": {
+        "customer_id": 3036931,
+        "CreatedAt": "2023-10-10T14:56:27.265907+09:00",
+        "sfa_contact_id": 328006044,
+        "file_Whole": "sample/Leads.csv",
+        "file_New": "sample/Leads_New_001.csv",
+        "persondata": "Dummy_Data_50000.xlsx",
+        "persondataCNT": 36931,
+        "period": 1,
+        "number": 200,
+        "event_month": [
+            5,
+            10
+        ],
+        "procdate": "2023-12-05T11:53:16.303673+09:00",
+        "counter": 36931
+    },
+    "Leads_Renew": {
+        "UpdatedAt": "2023-10-10T14:56:27.265907+09:00",
+        "file_Renew": "sample/Leads_Mod_001.csv",
+        "file_SQL": "sample/Leads_SQL.csv",
+        "period": 1,
+        "number": 100,
+        "score": [
+            -10,
+            -5,
+            -5,
+            5,
+            5,
+            5,
+            5,
+            10,
+            10,
+            10,
+            15,
+            15,
+            15,
+            20,
+            20,
+            20,
+            25,
+            25,
+            30,
+            30,
+            35,
+            35,
+            40,
+            40,
+            45,
+            50
+        ],
+        "procdate": "2023-12-05T11:53:21.610964+09:00",
+        "counter": 1294
+    },
+    "Opportunity_New": {
+        "opportunity_id": 719003920,
+        "CreatedDate": "2023-10-10T14:56:27.265907+09:00",
+        "file_Whole": "sample/Opportunity.csv",
+        "file_New": "sample/Opportunity_New_001.csv",
+        "period": 1,
+        "bias": {
+            "amount": {
+                "J1": {
+                    "min": 10,
+                    "max": 500
+                },
+                "J2": {
+                    "min": 1,
+                    "max": 200
+                },
+                "J3": {
+                    "min": 1,
+                    "max": 70
+                }
+            },
+            "CloseDate": {
+                "J1": {
+                    "min": 26,
+                    "max": 40
+                },
+                "J2": {
+                    "min": 13,
+                    "max": 40
+                },
+                "J3": {
+                    "min": 5,
+                    "max": 13
+                }
+            }
+        },
+        "genRate": [
+            5,
+            6,
+            7,
+            9
+        ],
+        "procdate": "2023-12-05T11:53:25.826655+09:00",
+        "counter": 2055
+    },
+    "Opportunity_Renew": {
+        "HistoryId": 2304014124,
+        "LastModifiedDate": "2023-10-10T14:56:27.265907+09:00",
+        "file_Renew": "sample/Opportunity_Mod_001.csv",
+        "file_history_Whole": "sample/OpportunityHistory.csv",
+        "file_history_New": "sample/OpportunityHistory_New.csv",
+        "file_Task_Whole": "data/Task.csv",
+        "file_Task_New": "data/Task_New.csv",
+        "period": 1,
+        "number": 150,
+        "classRate": {
+            "J1": 80,
+            "J2": 50,
+            "J3": 20
+        },
+        "nopDate": [
+            2,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            6,
+            6,
+            7,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19,
+            19,
+            20,
+            25,
+            30,
+            40,
+            60,
+            100,
+            120
+        ],
+        "procdate": "2023-12-05T11:53:29.599431+09:00",
+        "counter": 0
+    },
+    "common": {
+        "ActivityId": 50103460,
+        "actfileprefix": "sample/Activities_",
+        "referenceSheet": "参照テーブル.xlsx"
+    }
+}

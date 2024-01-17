@@ -1,0 +1,10 @@
+[
+    {
+        "name": "month",
+        "type": "DATE"
+    },
+    {
+        "name": "month_1y",
+        "type": "DATE"
+    }
+]

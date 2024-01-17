@@ -1,0 +1,42 @@
+[
+    {
+        "name": "id",
+        "type": "STRING"
+    },
+    {
+        "name": "name",
+        "type": "STRING"
+    },
+    {
+        "name": "first_name",
+        "type": "STRING"
+    },
+    {
+        "name": "last_name",
+        "type": "STRING"
+    },
+    {
+        "name": "email_address",
+        "type": "STRING"
+    },
+    {
+        "name": "department",
+        "type": "STRING"
+    },
+    {
+        "name": "office",
+        "type": "STRING"
+    },
+    {
+        "name": "manager_id",
+        "type": "STRING"
+    },
+    {
+        "name": "created_date",
+        "type": "STRING"
+    },
+    {
+        "name": "updated_date",
+        "type": "STRING"
+    }
+]

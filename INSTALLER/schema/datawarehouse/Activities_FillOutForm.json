@@ -1,0 +1,30 @@
+[
+    {
+        "name": "activity_id",
+        "type": "STRING"
+    },
+    {
+        "name": "activity_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "lead_id",
+        "type": "STRING"
+    },
+    {
+        "name": "program_name",
+        "type": "STRING"
+    },
+    {
+        "name": "program_type",
+        "type": "STRING"
+    },
+    {
+        "name": "webform_id",
+        "type": "INTEGER"
+    },
+    {
+        "name": "webform_id_value",
+        "type": "STRING"
+    }
+]

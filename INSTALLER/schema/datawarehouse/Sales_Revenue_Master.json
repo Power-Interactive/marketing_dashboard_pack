@@ -1,0 +1,22 @@
+[
+    {
+        "name": "month",
+        "type": "DATE"
+    },
+    {
+        "name": "office",
+        "type": "STRING"
+    },
+    {
+        "name": "department",
+        "type": "STRING"
+    },
+    {
+        "name": "sales_budget",
+        "type": "NUMERIC"
+    },
+    {
+        "name": "sales_renevue",
+        "type": "NUMERIC"
+    }
+]

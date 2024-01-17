@@ -1,0 +1,126 @@
+[
+    {
+        "name": "id",
+        "type": "STRING"
+    },
+    {
+        "name": "created_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "name",
+        "type": "STRING"
+    },
+    {
+        "name": "office",
+        "type": "STRING"
+    },
+    {
+        "name": "department",
+        "type": "STRING"
+    },
+    {
+        "name": "type",
+        "type": "STRING"
+    },
+    {
+        "name": "industry",
+        "type": "STRING"
+    },
+    {
+        "name": "country",
+        "type": "STRING"
+    },
+    {
+        "name": "postal_code",
+        "type": "STRING"
+    },
+    {
+        "name": "state",
+        "type": "STRING"
+    },
+    {
+        "name": "city",
+        "type": "STRING"
+    },
+    {
+        "name": "street",
+        "type": "STRING"
+    },
+    {
+        "name": "website",
+        "type": "STRING"
+    },
+    {
+        "name": "fiscal_year",
+        "type": "STRING"
+    },
+    {
+        "name": "rank",
+        "type": "STRING"
+    },
+    {
+        "name": "amount",
+        "type": "INTEGER"
+    },
+    {
+        "name": "company_code",
+        "type": "STRING"
+    },
+    {
+        "name": "corporate_number",
+        "type": "INTEGER"
+    },
+    {
+        "name": "company_score",
+        "type": "INTEGER"
+    },
+    {
+        "name": "company_description",
+        "type": "STRING"
+    },
+    {
+        "name": "listed_status",
+        "type": "STRING"
+    },
+    {
+        "name": "established_date",
+        "type": "DATE"
+    },
+    {
+        "name": "number_of_employee",
+        "type": "INTEGER"
+    },
+    {
+        "name": "end_of_period",
+        "type": "INTEGER"
+    },
+    {
+        "name": "sectors",
+        "type": "STRING"
+    },
+    {
+        "name": "subsectors",
+        "type": "STRING"
+    },
+    {
+        "name": "industries",
+        "type": "STRING"
+    },
+    {
+        "name": "scenarios",
+        "type": "STRING"
+    },
+    {
+        "name": "similar_companies",
+        "type": "STRING"
+    },
+    {
+        "name": "customer_status",
+        "type": "STRING"
+    },
+    {
+        "name": "updated_datetime",
+        "type": "TIMESTAMP"
+    }
+]

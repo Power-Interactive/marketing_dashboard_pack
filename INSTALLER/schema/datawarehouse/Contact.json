@@ -1,0 +1,74 @@
+[
+    {
+        "name": "id",
+        "type": "STRING"
+    },
+    {
+        "name": "created_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "account_id",
+        "type": "STRING"
+    },
+    {
+        "name": "mail_address",
+        "type": "STRING"
+    },
+    {
+        "name": "name",
+        "type": "STRING"
+    },
+    {
+        "name": "first_name",
+        "type": "STRING"
+    },
+    {
+        "name": "last_name",
+        "type": "STRING"
+    },
+    {
+        "name": "company",
+        "type": "STRING"
+    },
+    {
+        "name": "office",
+        "type": "STRING"
+    },
+    {
+        "name": "department",
+        "type": "STRING"
+    },
+    {
+        "name": "title",
+        "type": "STRING"
+    },
+    {
+        "name": "title_class",
+        "type": "STRING"
+    },
+    {
+        "name": "role",
+        "type": "STRING"
+    },
+    {
+        "name": "lead_source",
+        "type": "STRING"
+    },
+    {
+        "name": "detailded_lead_source",
+        "type": "STRING"
+    },
+    {
+        "name": "owner_id",
+        "type": "STRING"
+    },
+    {
+        "name": "manager_id",
+        "type": "STRING"
+    },
+    {
+        "name": "updated_datetime",
+        "type": "TIMESTAMP"
+    }
+]

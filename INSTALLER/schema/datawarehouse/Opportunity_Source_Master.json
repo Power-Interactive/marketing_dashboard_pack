@@ -1,0 +1,10 @@
+[
+    {
+        "name": "opportunity_source",
+        "type": "STRING"
+    },
+    {
+        "name": "detailed_opportunity_source",
+        "type": "STRING"
+    }
+]

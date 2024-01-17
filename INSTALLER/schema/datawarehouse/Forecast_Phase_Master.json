@@ -1,0 +1,10 @@
+[
+    {
+        "name": "forecast_phase",
+        "type": "STRING"
+    },
+    {
+        "name": "provability",
+        "type": "STRING"
+    }
+]

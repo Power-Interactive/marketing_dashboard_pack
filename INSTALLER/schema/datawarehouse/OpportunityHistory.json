@@ -1,0 +1,42 @@
+[
+    {
+        "name": "id",
+        "type": "STRING"
+    },
+    {
+        "name": "opportunity_id",
+        "type": "STRING"
+    },
+    {
+        "name": "created_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "forecast_phase",
+        "type": "STRING"
+    },
+    {
+        "name": "new_value",
+        "type": "STRING"
+    },
+    {
+        "name": "new_value_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "old_value",
+        "type": "STRING"
+    },
+    {
+        "name": "old_value_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "difference_days",
+        "type": "INTEGER"
+    },
+    {
+        "name": "system_modified_datetime",
+        "type": "TIMESTAMP"
+    }
+]

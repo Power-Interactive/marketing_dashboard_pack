@@ -1,0 +1,26 @@
+[
+    {
+        "name": "month",
+        "type": "DATE"
+    },
+    {
+        "name": "office",
+        "type": "STRING"
+    },
+    {
+        "name": "department",
+        "type": "STRING"
+    },
+    {
+        "name": "user",
+        "type": "STRING"
+    },
+    {
+        "name": "sales_target",
+        "type": "NUMERIC"
+    },
+    {
+        "name": "sales_result",
+        "type": "NUMERIC"
+    }
+]

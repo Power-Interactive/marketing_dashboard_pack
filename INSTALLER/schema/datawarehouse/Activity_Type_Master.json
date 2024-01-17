@@ -1,0 +1,10 @@
+[
+    {
+        "name": "activity_type",
+        "type": "STRING"
+    },
+    {
+        "name": "activity_alias",
+        "type": "STRING"
+    }
+]

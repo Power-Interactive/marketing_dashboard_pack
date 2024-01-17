@@ -1,0 +1,14 @@
+[
+    {
+        "name": "channel",
+        "type": "STRING"
+    },
+    {
+        "name": "year",
+        "type": "STRING"
+    },
+    {
+        "name": "cost",
+        "type": "NUMERIC"
+    }
+]

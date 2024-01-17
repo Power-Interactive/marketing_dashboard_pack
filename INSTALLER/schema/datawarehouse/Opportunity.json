@@ -1,0 +1,98 @@
+[
+    {
+        "name": "id",
+        "type": "STRING"
+    },
+    {
+        "name": "system_modified_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "account_id",
+        "type": "STRING"
+    },
+    {
+        "name": "amount",
+        "type": "NUMERIC"
+    },
+    {
+        "name": "close_date",
+        "type": "DATE"
+    },
+    {
+        "name": "created_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "last_modified_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "fiscal_year",
+        "type": "INTEGER"
+    },
+    {
+        "name": "opportunity_source",
+        "type": "STRING"
+    },
+    {
+        "name": "name",
+        "type": "STRING"
+    },
+    {
+        "name": "owner_id",
+        "type": "STRING"
+    },
+    {
+        "name": "type",
+        "type": "STRING"
+    },
+    {
+        "name": "probability",
+        "type": "STRING"
+    },
+    {
+        "name": "license",
+        "type": "STRING"
+    },
+    {
+        "name": "last_amount",
+        "type": "NUMERIC"
+    },
+    {
+        "name": "channel_type",
+        "type": "STRING"
+    },
+    {
+        "name": "distributor",
+        "type": "STRING"
+    },
+    {
+        "name": "end_date",
+        "type": "DATE"
+    },
+    {
+        "name": "contact_status",
+        "type": "STRING"
+    },
+    {
+        "name": "loss_reason",
+        "type": "STRING"
+    },
+    {
+        "name": "contct_id",
+        "type": "STRING"
+    },
+    {
+        "name": "forecast_phase",
+        "type": "STRING"
+    },
+    {
+        "name": "detailded_opportunity_source",
+        "type": "STRING"
+    },
+    {
+        "name": "opportunity_closed_date",
+        "type": "DATE"
+    }
+]

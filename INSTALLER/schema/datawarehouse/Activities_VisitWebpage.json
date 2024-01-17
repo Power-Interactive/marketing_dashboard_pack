@@ -1,0 +1,22 @@
+[
+    {
+        "name": "activity_id",
+        "type": "STRING"
+    },
+    {
+        "name": "activity_datetime",
+        "type": "TIMESTAMP"
+    },
+    {
+        "name": "lead_id",
+        "type": "STRING"
+    },
+    {
+        "name": "webpage_id_value",
+        "type": "STRING"
+    },
+    {
+        "name": "webpage_url",
+        "type": "STRING"
+    }
+]
