@@ -1,0 +1,9 @@
+CREATE TABLE dejimapro.dl_ma.Activities_VisitWebpage
+(
+ActivityId STRING,
+ActivityDate TIMESTAMP,
+LeadId STRING,
+UserAgent STRING,
+WebpageIDValue STRING,
+WebpageURL STRING,
+)
