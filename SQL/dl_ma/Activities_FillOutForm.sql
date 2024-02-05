@@ -1,11 +1,11 @@
-CREATE TABLE							
-	dl_ma.Activities_FillOutForm
-(							
-	ActivityId		STRING,
-	ActivityDate	TIMESTAMP,
-	LeadId			STRING,
-	ProgramName		STRING,
-	ProgramType		STRING,
-	WebformID		INT64,
-	WebformIDValue	STRING
-)	
+CREATE TABLE dejimapro.dl_ma.Activities_FillOutForm
+(
+ActivityId STRING,
+LeadId INTEGER,
+ActivityDate TIMESTAMP,
+CampaignId INTEGER,
+WebformID INTEGER,
+WebformIDValue STRING,
+WebpageID INTEGER,
+ListId INTEGER,
+)
