@@ -1,0 +1,12 @@
+CREATE TABLE dejimapro.dl_ma.Activities_ChangeProgramMemberData
+(
+ActivityId STRING,
+ActivityDate TIMESTAMP,
+AttributeDisplayName STRING,
+AttributeName INTEGER,
+CampaignId INTEGER,
+LeadId INTEGER,
+NewValue STRING,
+ProgramID INTEGER,
+ProgramIDValue STRING,
+)
