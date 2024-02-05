@@ -1,0 +1,13 @@
+CREATE TABLE dejimapro.dl_ma.Activities_ChangeStatusinProgression
+(
+ActivityId STRING,
+ActivityDate TIMESTAMP,
+LeadId STRING,
+NewStatus STRING,
+OldStatus STRING,
+ProgramID INTEGER,
+ProgramIDValue STRING,
+ProgramMemberID INTEGER,
+Reason STRING,
+StatusReason STRING,
+)
