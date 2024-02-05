@@ -1,0 +1,17 @@
+CREATE TABLE dejimapro.dl_ma.Activities_NewLead
+(
+ActivityId STRING,
+LeadId STRING,
+ActivityDate TIMESTAMP,
+CampaignId STRING,
+CreatedDate DATE,
+FormName STRING,
+LeadSource STRING,
+ListName STRING,
+SFDCType STRING,
+SourceType STRING,
+APIMethodName STRING,
+ModifyingUser STRING,
+RequestId STRING,
+ListId STRING,
+)
