@@ -1,0 +1,13 @@
+CREATE TABLE dejimapro.dl_ma.Activities_ChangeScore
+(
+ActivityId STRING,
+ActivityDate TIMESTAMP,
+CampaignId STRING,
+ChangeValue STRING,
+LeadId STRING,
+NewValue INTEGER,
+OldValue INTEGER,
+Reason STRING,
+ScoreName INTEGER,
+ScoreNameValue STRING,
+)
