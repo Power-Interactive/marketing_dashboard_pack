@@ -1,0 +1,13 @@
+CREATE TABLE dejimapro.dl_ma.Campaigns
+(
+Id INTEGER,
+Name STRING,
+Description STRING,
+Type STRING,
+ProgramId INTEGER,
+ProgramName STRING,
+WorkspaceName STRING,
+CreatedAt TIMESTAMP,
+UpdatedAt TIMESTAMP,
+Active BOOLEAN,
+)
