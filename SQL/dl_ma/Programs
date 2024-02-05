@@ -1,0 +1,21 @@
+CREATE TABLE dejimapro.dl_ma.Programs
+(
+Id STRING,
+Channel STRING,
+CostNotes STRING,
+CostStartDates STRING,
+Costs STRING,
+CreatedAt TIMESTAMP,
+FolderId INTEGER,
+FolderName STRING,
+FolderType STRING,
+Name STRING,
+Status STRING,
+Type STRING,
+UpdatedAt TIMESTAMP,
+Url STRING,
+Description STRING,
+Workspace STRING,
+TagTypes STRING,
+TagValues STRING,
+)
