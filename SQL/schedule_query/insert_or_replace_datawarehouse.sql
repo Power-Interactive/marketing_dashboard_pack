@@ -129,7 +129,8 @@ SELECT
   cast(NewStatus AS STRING) AS new_status,
   cast(OldStatus AS STRING) AS old_status,
   cast(ProgramID AS STRING) AS program_id,
-  cast(ProgramMemberID AS STRING) AS program_member_id
+  cast(ProgramMemberID AS STRING) AS program_member_id,
+  cast(Success AS BOOLEAN) AS success
 FROM
   `pi-dashboard-398109.dl_ma.Activities_ChangeStatusinProgression`
 WHERE
@@ -191,6 +192,7 @@ CREATE OR REPLACE TABLE
 AS
 SELECT
   Id AS id,
+  CreatedAt AS create_datetime,
   Channel AS channel,
   Name AS name,
   Type AS type
