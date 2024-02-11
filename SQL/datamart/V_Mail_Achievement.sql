@@ -5,7 +5,7 @@ AS
 SELECT
 PG.channel, --Channel名（メール）
 PG.name, --メール名
-CAST(FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', PG.create_datetime, 'Asia/Tokyo') AS DATETIME) AS created_datetime, --メール作成日作成日
+CAST(FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', PG.created_datetime, 'Asia/Tokyo') AS DATETIME) AS created_datetime, --メール作成日作成日
 AC.*
 FROM
   `dejimapro.datawarehouse.Programs` AS PG
