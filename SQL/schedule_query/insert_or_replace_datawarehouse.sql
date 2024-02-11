@@ -192,7 +192,7 @@ CREATE OR REPLACE TABLE
 AS
 SELECT
   Id AS id,
-  CreatedAt AS create_datetime,
+  CreatedAt AS created_datetime,
   Channel AS channel,
   Name AS name,
   Type AS type
