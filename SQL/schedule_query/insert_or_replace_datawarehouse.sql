@@ -119,6 +119,22 @@ WHERE
   CAST(ActivityDate AS DATE) >= DATE_SUB(CURRENT_DATE('Etc/UTC'), INTERVAL 1 DAY)
 ;
 
+--Activities_ChangeStatusinProgression
+INSERT INTO
+  `pi-dashboard-398109.datawarehouse.Activities_ChangeStatusinProgression`
+SELECT
+  cast(ActivityId AS STRING) AS activity_id,
+  cast(ActivityDate AS TIMESTAMP) AS activity_datetime,
+  cast(LeadId AS STRING) AS lead_id,
+  cast(NewStatus AS STRING) AS new_status,
+  cast(OldStatus AS STRING) AS old_status,
+  cast(ProgramID AS STRING) AS program_id,
+  cast(ProgramMemberID AS STRING) AS program_member_id
+FROM
+  `pi-dashboard-398109.dl_ma.Activities_ChangeStatusinProgression`
+WHERE
+  CAST(ActivityDate AS DATE) >= DATE_SUB(CURRENT_DATE('Etc/UTC'), INTERVAL 1 DAY)
+;
 
 --Leads
 /* 全件洗い替えで対応 */
@@ -166,6 +182,20 @@ SELECT
   cast(UpdatedAt AS TIMESTAMP) AS updated_datetime
 FROM
   `pi-dashboard-398109.dl_ma.Leads`
+;
+
+--Programs
+/* 全件洗い替えで対応 */
+CREATE OR REPLACE TABLE
+  `pi-dashboard-398109.datawarehouse.Programs`
+AS
+SELECT
+  Id AS id,
+  Channel AS channel,
+  Name AS name,
+  Type AS type
+FROM
+  `pi-dashboard-398109.dl_ma.Programs`
 ;
 
 --Account
